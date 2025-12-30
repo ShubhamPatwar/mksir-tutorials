@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukesh Sir Classes - Mathematics & Science Coaching</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #2d3748;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #2d3748;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .about {
+            background: #f7fafc;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .subject-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .subject-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .subject-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .subject-card ul {
+            list-style: none;
+            text-align: left;
+        }
+
+        .subject-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .subject-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .toppers {
+            background: #f7fafc;
+        }
+
+        .toppers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .topper-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .topper-card:hover {
+            transform: scale(1.05);
+        }
+
+        .topper-img {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .topper-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .topper-info h3 {
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .topper-info .achievement {
+            color: #667eea;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .topper-info .score {
+            color: #48bb78;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .contact {
+            background: #2d3748;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact h2::after {
+            background: white;
+        }
+
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-item {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item strong {
+            color: #667eea;
+        }
+
+        footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mukesh Sir Classes</h1>
+        <p>Excellence in Mathematics & Science Education</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#subjects">Subjects</a></li>
+            <li><a href="#toppers">Our Toppers</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p>Welcome to Mukesh Sir Classes, where we transform students into confident learners and achievers. With years of dedicated teaching experience in Mathematics and Science, we provide personalized attention and proven teaching methodologies that help students excel in their academic journey. Our focus is on building strong fundamentals, developing problem-solving skills, and fostering a genuine love for learning.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="subjects">
+        <div class="container">
+            <h2>Subjects We Teach</h2>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <div class="subject-icon">📐</div>
+                    <h3>Mathematics</h3>
+                    <ul>
+                        <li>Algebra & Geometry</li>
+                        <li>Trigonometry</li>
+                        <li>Calculus</li>
+                        <li>Statistics & Probability</li>
+                        <li>Board Exam Preparation</li>
+                    </ul>
+                </div>
+
+                <div class="subject-card">
+                    <div class="subject-icon">🔬</div>
+                    <h3>Physics</h3>
+                    <ul>
+                        <li>Mechanics</li>
+                        <li>Thermodynamics</li>
+                        <li>Electromagnetism</li>
+                        <li>Optics & Modern Physics</li>
+                        <li>Practical Problem Solving</li>
+                    </ul>
+                </div>
+
+                <div class="subject-card">
+                    <div class="subject-icon">⚗️</div>
+                    <h3>Chemistry</h3>
+                    <ul>
+                        <li>Physical Chemistry</li>
+                        <li>Organic Chemistry</li>
+                        <li>Inorganic Chemistry</li>
+                        <li>Chemical Reactions</li>
+                        <li>Laboratory Techniques</li>
+                    </ul>
+                </div>
+
+                <div class="subject-card">
+                    <div class="subject-icon">🧬</div>
+                    <h3>Biology</h3>
+                    <ul>
+                        <li>Cell Biology</li>
+                        <li>Genetics & Evolution</li>
+                        <li>Human Physiology</li>
+                        <li>Plant Biology</li>
+                        <li>Ecology & Environment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="toppers" class="toppers">
+        <div class="container">
+            <h2>Our Star Performers</h2>
+            <div class="toppers-grid">
+                <div class="topper-card">
+                    <div class="topper-img">🎓</div>
+                    <div class="topper-info">
+                        <h3>Priya Sharma</h3>
+                        <p class="achievement">Class 12 - CBSE Board</p>
+                        <p class="score">98% in Mathematics</p>
+                    </div>
+                </div>
+
+                <div class="topper-card">
+                    <div class="topper-img">🏆</div>
+                    <div class="topper-info">
+                        <h3>Rahul Verma</h3>
+                        <p class="achievement">Class 10 - State Board</p>
+                        <p class="score">95% in Science</p>
+                    </div>
+                </div>
+
+                <div class="topper-card">
+                    <div class="topper-img">⭐</div>
+                    <div class="topper-info">
+                        <h3>Ananya Patel</h3>
+                        <p class="achievement">JEE Main 2024</p>
+                        <p class="score">Percentile: 99.2</p>
+                    </div>
+                </div>
+
+                <div class="topper-card">
+                    <div class="topper-img">🌟</div>
+                    <div class="topper-info">
+                        <h3>Arjun Kumar</h3>
+                        <p class="achievement">Class 12 - Physics</p>
+                        <p class="score">99/100</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Phone:</strong> +91 98765 43210
+                </div>
+                <div class="contact-item">
+                    <strong>Email:</strong> mukeshsirclasses@gmail.com
+                </div>
+                <div class="contact-item">
+                    <strong>Address:</strong> 123 Education Street, Bengaluru, Karnataka
+                </div>
+                <div class="contact-item">
+                    <strong>Timings:</strong> Monday - Saturday, 4:00 PM - 8:00 PM
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mukesh Sir Classes. All rights reserved.</p>
+    </footer>
+</body>
+</html>
